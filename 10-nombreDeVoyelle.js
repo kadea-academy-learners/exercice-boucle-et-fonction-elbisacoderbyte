@@ -5,14 +5,33 @@
 
   Signature attendue :
     function nombreDeVoyelles(phrase) -> number
-
-  Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
+
 function nombreDeVoyelles(phrase) {
-  // Exercice non implémenté : doit compter les voyelles
-  // Placeholder neutre : retourne 0 pour indiquer non-implémentation
-  return 0;
+  // Vérification que l’entrée est bien une chaîne
+  if (typeof phrase !== 'string') {
+    return 0;
+  }
+
+  // Conversion en minuscules pour ignorer la casse
+  const texte = phrase.toLowerCase();
+
+  //  Définition des voyelles à rechercher
+  const voyelles = ['a', 'e', 'i', 'o', 'u', 'y'];
+
+  // Compteur initial
+  let compteur = 0;
+
+  //  Parcourir chaque caractère de la phrase
+  for (let i = 0; i < texte.length; i++) {
+    if (voyelles.includes(texte[i])) {
+      compteur++;
+    }
+  }
+
+  //  Retourner le nombre total de voyelles
+  return compteur;
 }
 
 // Ne pas modifier la ligne ci-dessous
-module.exports = { nombreDeVoyelles }
+module.exports = { nombreDeVoyelles };

@@ -10,7 +10,7 @@
 */
 
 function max(a, b) {
-  // 1️⃣ Vérification des entrées
+  //  Vérification des entrées
   if (
     typeof a !== 'number' ||
     typeof b !== 'number' ||
@@ -20,12 +20,12 @@ function max(a, b) {
     return null; // entrées invalides
   }
 
-  // 2️⃣ Cas où les deux nombres sont égaux
+  //  Cas où les deux nombres sont égaux
   if (a === b) {
     return "Les deux nombres sont égaux";
   }
 
-  // 3️⃣ Retourner le plus grand nombre
+  //  Retourner le plus grand nombre
   return a > b ? a : b;
 }
 

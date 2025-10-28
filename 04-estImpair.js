@@ -10,12 +10,12 @@
 */
 
 function estImpair(n) {
-  // 1️⃣ Vérifier si n est un nombre et un entier
+  //  Vérifier si n est un nombre et un entier
   if (typeof n !== 'number' || isNaN(n) || !Number.isInteger(n)) {
     return null; // entrée invalide
   }
 
-  // 2️⃣ Retourner directement le résultat du test de parité
+  //  Retourner directement le résultat du test de parité
   return n % 2 !== 0;
 }
 

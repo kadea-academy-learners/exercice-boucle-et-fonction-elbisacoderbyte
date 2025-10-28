@@ -6,14 +6,28 @@
 
   Signature attendue :
     function factorielle(n) -> number
-
-  Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
+
 function factorielle(n) {
-  // Exercice non implémenté : calculer la factorielle de n
-  // Placeholder neutre : retourne 0 pour indiquer non-implémentation
-  return 0;
+  //  Vérification de validité de l'entrée
+  if (typeof n !== 'number' || isNaN(n) || !Number.isInteger(n) || n < 0) {
+    return 0;
+  }
+
+  //  Cas de base : factorielle de 0 et 1 = 1
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+
+  //  Calcul avec une boucle
+  let resultat = 1;
+  for (let i = 2; i <= n; i++) {
+    resultat *= i; // équivaut à resultat = resultat * i
+  }
+
+  // Retour du résultat final
+  return resultat;
 }
 
 // Ne pas modifier la ligne ci-dessous
-module.exports = { factorielle }
+module.exports = { factorielle };

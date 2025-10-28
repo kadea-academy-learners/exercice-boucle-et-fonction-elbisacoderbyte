@@ -7,28 +7,17 @@
 
   Signature attendue :
     function estImpair(n) -> boolean | null
-
-  Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
+
 function estImpair(n) {
-  // Vérifie si n est un nombre valide
-  if (typeof n !== 'number' || isNaN(n)) {
-    return null;
+  // 1️⃣ Vérifier si n est un nombre et un entier
+  if (typeof n !== 'number' || isNaN(n) || !Number.isInteger(n)) {
+    return null; // entrée invalide
   }
 
-  // Vérifie si c’est un entier
-  if (!Number.isInteger(n)) {
-    return null;
-  }
-
-  // Vérifie si c’est impair
-  if (n % 2 !== 0) {
-    return true;
-  } else {
-    return false;
-  }
+  // 2️⃣ Retourner directement le résultat du test de parité
+  return n % 2 !== 0;
 }
 
 // Ne pas modifier la ligne ci-dessous
 module.exports = { estImpair };
-

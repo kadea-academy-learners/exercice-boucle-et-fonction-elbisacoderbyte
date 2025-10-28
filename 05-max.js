@@ -7,14 +7,27 @@
 
   Signature attendue :
     function max(a, b) -> number | string | null
-
-  Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
+
 function max(a, b) {
-  // Exercice non implémenté : retourner le plus grand ou un message si égaux
-  // Placeholder neutre : retourne null pour indiquer non-implémentation
-  return null;
+  // 1️⃣ Vérification des entrées
+  if (
+    typeof a !== 'number' ||
+    typeof b !== 'number' ||
+    isNaN(a) ||
+    isNaN(b)
+  ) {
+    return null; // entrées invalides
+  }
+
+  // 2️⃣ Cas où les deux nombres sont égaux
+  if (a === b) {
+    return "Les deux nombres sont égaux";
+  }
+
+  // 3️⃣ Retourner le plus grand nombre
+  return a > b ? a : b;
 }
 
 // Ne pas modifier la ligne ci-dessous
-module.exports = { max }
+module.exports = { max };
